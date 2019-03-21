@@ -4,13 +4,10 @@ var axios = require("axios");
 
 ///require moment 
 
-let Spotify = require("node-spotify-api");
-require("./keys.js");
+// let Spotify = require("node-spotify-api");
+// require("./keys.js");
 
-
-require("fs");
-
-
+// require("fs");
 
 let movieCommand = process.argv[2];
 if (movieCommand === "movie-this") {
@@ -35,23 +32,25 @@ axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=tril
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Spotify Portion///
 
-require('spotify');
+// require('spotify');
 
-spotify = new Spotify({
-    id: yffe2a620de7d45eea35774e1c1d9dcde,
-    secret: f5304a1a1c8e4bb1a7259b0c29093aee
-  });
+// spotify = new Spotify({
+//     id: yffe2a620de7d45eea35774e1c1d9dcde,
+//     secret: f5304a1a1c8e4bb1a7259b0c29093aee
+//   });
 
-let songCommand = process.argv[2];
-if (songCommand === "spotify-this-song") {
-    console.log("Searching for song or artist info...")
-}
+// let songCommand = process.argv[2];
+// if (songCommand === "spotify-this-song") {
+//     console.log("Searching for song or artist info...")
+// }
 
-let song =process.argv[3] ;
-  {/* .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
-  .then(function(data) {
-    console.log(data); 
-  })
-  .catch(function(err) {
-    console.error('Error occurred: ' + err); 
-  }); */}
+// let song =process.argv[3] ;
+//  axios.request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
+//   then(function(data) {
+//     console.log(data); 
+//   })
+//   (function(err) {
+//     console.error('Error occurred: ' + err); 
+//     console.log(song);
+   
+//   });
