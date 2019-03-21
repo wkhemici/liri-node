@@ -2,6 +2,16 @@ require("dotenv").config();
 var axios = require("axios");
 // var keys = require("./keys.js");
 
+///require moment 
+
+let Spotify = require("node-spotify-api");
+require("./keys.js");
+
+
+require("fs");
+
+
+
 let movieCommand = process.argv[2];
 if (movieCommand === "movie-this") {
     console.log("Searching for movie...")
@@ -25,109 +35,23 @@ axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=tril
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Spotify Portion///
 
-var spotify = require('spotify');
+require('spotify');
+
+spotify = new Spotify({
+    id: yffe2a620de7d45eea35774e1c1d9dcde,
+    secret: f5304a1a1c8e4bb1a7259b0c29093aee
+  });
 
 let songCommand = process.argv[2];
 if (songCommand === "spotify-this-song") {
     console.log("Searching for song or artist info...")
 }
 
-// process.argv[3] = function(){}
-
-// spotify.search({ type=" ", query=" " }, function(err, data) {
-//     if ( err ) {
-//         console.log('Error occurred: ' + err);
-//         return;
-//     }
-//  console.log(data);
-
-// }
-//     // Do something with 'data'
-// });
-
-// // spotifyThisSong(spotify);
-// let songCommand = process.argv[2];
-
-// let song = process.argv[3];
-
-// if (songCommand === "spotify-this-song") {
-//     console.log("Searching for a song...");
-
-// if (song === ) {
-//      console.log("Searching for a song...")
-
-// spotify
-//   .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
-//   .then(function(data) {
-//     console.log(data); 
-//   })
-//   .catch(function(err) {
-//     console.error('Error occurred: ' + err); 
-//   });
-
-// axios.get('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx').then(
-//     function (response) {
-//         console.log("looking for a song: " + response);
-//     }
-// );
-// }
-
-
-// ////////////////////////////////////////////////////////
-
-// // function doWhatItSays() {
-// //     fs.readFile("random.txt", "utf8", function (err, data) {
-// //         if (err) {
-// //             return console.log("Error occurred: " + err);
-// //         } else {
-// //             data = data.split(",");
-// //             let command = data[0];
-// //             let nameArray = data[1].split(" ");
-// //             let name = "";
-// //             for (let i = 0; i < nameArray.length; i++) {
-// //                 if ((i > 0) && (i < nameArray.length)) {
-// //                     name += " " + nameArray[i];
-// //                 } else {
-// //                     name += nameArray[i];
-// //                 }
-// //             }
-// //             name = name.replace(/"/g,"");
-// //             liri(command, name);
-// //         }
-// //     });
-// // }
-// // doWhatItSays();
-
-
-
-
-// // var movie = function () {
-// //     title = " ",
-// //         rating = " ",
-// //         rottenTomatoes = " ",
-// //         country = " ",
-// //         language = " ",
-// //         plot = " ",
-// //         cast = " "
-// // } we dont need this because look below:
-
-// // * `do-what-it-says`
-
-// // Use the following commands: where app will happen. user requests here
-
-// // ///`concert-this`
-
-// // * `spotify-this-song`
-
-// // * `movie-this`
-
-// // Include the axios npm package (Don't forget to run "npm install axios" in this folder first!)
-
-// /// either INVALID --- or other command types aka spotify
-
-// // let type = process.argv[3];
-// // if(type === "title"){
-// //     console.log(response.data.title)
-// // }
-// // Then run a request with axios to the OMDB API with the movie specified
-// // Then run a request with axios to the OMDB API with the movie specified
+let song =process.argv[3] ;
+  {/* .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
+  .then(function(data) {
+    console.log(data); 
+  })
+  .catch(function(err) {
+    console.error('Error occurred: ' + err); 
+  }); */}
